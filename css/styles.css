@@ -1,0 +1,100 @@
+:root {
+  font-size: 16px;
+}
+body {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+#gameboard {
+  visibility: hidden;
+  display: grid;
+  grid-template-rows: repeat(3, 100px);
+  grid-template-columns: repeat(3, 100px);
+  grid-template-areas:
+    "cell1 cell2 cell3"
+    "cell4 cell5 cell6"
+    "cell7 cell8 cell9";
+}
+
+#gameOptions {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+#gameOptions > * {
+  width: 100%;
+}
+
+.cell {
+  border: solid 2px black;
+  height: 100%;
+  width: 100%;
+  cursor: pointer;
+  font-size: x-large;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+input[type="radio"] {
+  display: none;
+}
+
+label.button {
+  display: inline-block;
+  padding: 10px 20px;
+  background-color: lightgray;
+  border: 1px solid darkgray;
+  cursor: pointer;
+  user-select: none;
+  transition: background-color 0.2s;
+}
+
+label.button:hover {
+  background-color: darkgray;
+}
+
+.falseRadio {
+  display: none;
+}
+
+#pvpOptions {
+  display: none;
+}
+
+#aiOptions {
+  display: none;
+}
+
+#startGameBttn {
+  margin: 1rem 0;
+}
+
+#game {
+  text-align: center;
+  width: max-content;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+#gameButtons {
+  width: 100%;
+  max-width: 300px;
+  margin: 1rem 0;
+  display: flex;
+  justify-content: space-between;
+}
+
+#playerName {
+  display: block;
+  margin: 1rem 0;
+}
+
+.hint {
+  display: none;
+  color: red;
+}
