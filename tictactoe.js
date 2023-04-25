@@ -88,8 +88,8 @@ function AIPlayer(symbol, type, gameBoard) {
   ];
 
   player.initialize = function () {
-    gameListener = eventBus.on("turnChange", this.makeMove.bind(this));
     eventBus.on("newGame", unsubscribe);
+    gameListener = eventBus.on("turnChange", this.makeMove.bind(this));
     this.board = this.gameBoard.getCells();
   };
 
@@ -538,6 +538,7 @@ const dom = (function (eventBus) {
 
   // Start the game based on the submitted game options
   function startGame(event) {
+    clearBoard();
     event.preventDefault();
     let formData = new FormData(gameOptions);
 
@@ -600,6 +601,7 @@ const dom = (function (eventBus) {
   // returns the player to the option selection screen
   function backToOptions() {
     restartGame();
+    clearBoard();
     gameSection.style.display = "none";
     gameOptions.style.display = "block";
   }
